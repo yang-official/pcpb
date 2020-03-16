@@ -1,0 +1,7 @@
+---
+title: "A Practical Coding Problem Book in Python"
+author: Yáng Zhèngyuán
+rights: Copyright © 2020
+language: en-US
+...
+---
