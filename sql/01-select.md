@@ -27,19 +27,33 @@ Write a SQL query to show the name and areas of countries with an area between 2
 select name, area from world where area between 200000 and 250000
 ```
 Source: SZ
-#### 1.1.4 Pattern Matching
-
-#### 1.1.5 Value Comparison
+#### 1.1.4 Value Comparison
 Write a SQL query to show the name of countries with a population of at least 200 million.
 ```SQL
 select name from world where population >= 200000000
 ```
 Source: SZ
-
-
-
-
-
+#### 1.1.5 Calculations
+Write a SQL query to show the name and per capita gdp for countries with a population of at least 200 million.
+```SQL
+select name, gdp/population as 'per capita GDP' from world where population >= 200000000
+```
+Source: SZ
+#### 1.1.6 Or
+Write an SQL query to output the name, population, and area of a big country; a big country is defined as having an area larger than 3 million or a population of more than 250 million.
+```SQL
+select name, population, area from world where area > 3000000 or population > 250000000
+```
+Source: SZ, LC 595
+#### 1.1.7 Exclusive Or
+Write an SQL query to output the name, population, and area of a country that is big by area (more than 3 million) or big by population (more than 250 million)
+```SQL
+SELECT name, population, area FROM world WHERE area > 3000000 XOR population > 250000000;
+-- if using a SQL language where XOR is not valid:
+SELECT name, population, area FROM world WHERE (area > 3000000 AND population <= 250000000) OR (area <= 3000000 AND population > 250000000);
+```
+Source: SZ
+#### 1.1.8 String Pattern Matching
 
 
 
