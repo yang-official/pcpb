@@ -1,25 +1,55 @@
 # Chapter 1: Select
 
-#### 1.1 Second Highest Salary
+## 1.1 Select Basics
+Table: World
+
+| name        | continent | area    | population | gdp          |
+|-------------|-----------|---------|------------|--------------|
+| Afghanistan | Asia      | 652230  | 25500100   | 20343000000  |
+| Albania     | Europe    | 28748   | 2831741    | 12960000000  |
+| Algeria     | Africa    | 2381741 | 37100000   | 188681000000 |
+
+#### 1.1.1 Where
+Write a SQL query to show the population of France.
+```SQL
+select population from world where name = 'France'
 ```
-Table: Employee
-+----+--------+
-| Id | Salary |
-+----+--------+
-| 1  | 100    |
-| 2  | 200    |
-| 3  | 300    |
-+----+--------+
+Source: SZ
+#### 1.1.2 In
+Write a SQL query to show the names and populations of the countries Sweden, Norway, and Denmark.
+```SQL
+select name, population from world where name in ('Sweden', 'Norway', 'Denmark')
 ```
-Write a SQL query to get the second highest salary in the above table `Employee`. If there is no second highest salary, the query should return `null`.
+Source: SZ
+#### 1.1.3 Between
+Write a SQL query to show the name and areas of countries with an area between 200,000 and 250,000
+```SQL
+select name, area from world where area between 200000 and 250000
 ```
-+---------------------+
-| SecondHighestSalary |
-+---------------------+
-| 200                 |
-+---------------------+
+Source: SZ
+#### 1.1.4 Pattern Matching
+
+#### 1.1.5 Value Comparison
+Write a SQL query to show the name of countries with a population of at least 200 million.
+```SQL
+select name from world where population >= 200000000
 ```
-Source: LC 176
+Source: SZ
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+### SELECT within SELECT
 
 Solution
 ```SQL
@@ -29,6 +59,7 @@ where Salary < (
   select max(Salary) from Employee
 );
 ```
+
 #### 1.2 Nth Highest Salary
 ```
 Table: Employee
